@@ -1,0 +1,101 @@
+# ===================================
+# ICP Qualifier Configuration
+# ===================================
+# Copy this file to 'config.yaml' and customize for your use case
+# --- Search Settings ---
+search:
+  # Search provider: "ddgs" (free, no setup) or "google" (requires API key)
+  provider: "ddgs"
+ 
+  # DuckDuckGo settings (used when provider = "ddgs")
+  ddgs:
+    results_per_query: 2
+    retry_attempts: 3
+   
+  # Google Custom Search settings (used when provider = "google")
+  # Requires: pip install google-api-python-client
+  # Get credentials: https://developers.google.com/custom-search/v1/overview
+  google:
+    api_key: "" # Leave empty, set in .env as GOOGLE_API_KEY
+    search_engine_id: "" # Leave empty, set in .env as GOOGLE_CSE_ID
+    results_per_query: 5
+# --- Discovery Settings ---
+discovery:
+  # Discovery sources by territory
+  # These are domains known to list B2B companies
+  sources:
+    USA:
+      - "thomasnet.com"
+      - "clutch.co"
+      - "linkedin.com/company"
+    Europe:
+      - "europages.com"
+      - "clutch.co"
+      - "linkedin.com/company"
+    Middle_East:
+      - "zawya.com"
+      - "gulfbusiness.com/lists"
+      - "linkedin.com/company"
+ 
+  # Keywords for initial discovery searches
+  # Customize these for your product/service
+  positive_keywords:
+    # Dashcam & Video Telematics
+    - "video telematics"
+    - "dashcam"
+    - "fleet camera"
+    - "in-vehicle video"
+    - "driver monitoring"
+   
+    # DMS (Driver Monitoring System)
+    - "driver monitoring system"
+    - "DMS"
+    - "driver attention monitoring"
+    - "driver drowsiness detection"
+    - "driver distraction detection"
+   
+    # ADAS (Advanced Driver Assistance Systems)
+    - "ADAS"
+    - "advanced driver assistance"
+    - "collision avoidance"
+    - "lane departure warning"
+    - "forward collision warning"
+    - "blind spot detection"
+   
+    # Related Automotive Technologies
+    - "fleet safety"
+    - "vehicle telematics"
+    - "automotive vision systems"
+    - "AI dashcam"
+    - "smart vehicle camera"
+    - "automotive AI"
+ 
+  # Heuristic filter keywords (quick relevance check)
+  # Company websites must mention at least one of these
+  heuristic_keywords:
+    # Core terms
+    - "dashcam"
+    - "camera"
+    - "video"
+    - "telematics"
+    - "fleet"
+    - "vehicle"
+   
+    # DMS related
+    - "driver monitoring"
+    - "DMS"
+    - "drowsiness"
+    - "distraction"
+    - "attention monitoring"
+   
+    # ADAS related
+    - "ADAS"
+    - "collision avoidance"
+    - "lane departure"
+    - "driver assistance"
+    - "safety system"
+   
+    # General automotive
+    - "automotive"
+    - "fleet safety"
+    - "vehicle safety"
